@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Vehículo</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container mx-auto p-6">
+        <h1 class="text-2xl font-bold mb-4">Añadir Nuevo Vehículo</h1>
+        <div class="card">
+            <form id="formNuevoVehiculo">
+                <input type="hidden" id="clienteId">
+                <div class="form-row">
+                    <div class="form-col"><label for="marca">Marca</label><input type="text" id="marca" required></div>
+                    <div class="form-col"><label for="modelo">Modelo</label><input type="text" id="modelo" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col"><label for="anio">Año</label><input type="number" id="anio" required></div>
+                    <div class="form-col"><label for="matricula">Matrícula</label><input type="text" id="matricula"
+                            required></div>
+                </div>
+                <button type="submit" class="btn btn-success">Guardar Vehículo</button>
+                <a href="#" id="btnCancelar" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+    <script src="/js/nuevo-vehiculo.js"></script>
+</body>
+
+</html>

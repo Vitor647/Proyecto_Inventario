@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Inventario</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --success: #27ae60;
+      --warning: #f39c12;
+      --danger: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #34495e;
+      --gray: #95a5a6;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: var(--light);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-right: 20px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .link {
+      color: var(--secondary);
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    .link:hover {
+      background: var(--light);
+      border-radius: 5px;
+    }
+
+    .main-content {
+      flex: 1;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+
+    .card-title {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .logo {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--dark));
+      color: white;
+      padding: 20px 0;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2 class="text-primary">Navegación</h2>
+      <a href="proveedores.html" class="link">Proveedores</a>
+      <a href="categorias.html" class="link">Categorías</a>
+      <a href="repuestos.html" class="link">Repuestos</a>
+      <a href="clientes.html" class="link">Clientes</a>
+      <a href="vehiculos.html" class="link">Vehículos</a>
+      <a href="nueva-orden.html" class="link">Crear Orden de Trabajo</a>
+      <a href="OrdenesdeTrabajo.html" class="link">Órdenes de Trabajo</a>
+      <a href="MovimientoInventario.html" class="link">Movimientos de Inventario</a>
+      <a href="usuario.html" class="link">Usuarios</a>
+      <a href="logout.html" class="link">Cerrar Sesión</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content flex-grow-1">
+      <header class="text-center mb-4">
+        <img src="/images/logo.png" alt="Logo de la Empresa" class="logo mb-3">
+        <h1 class="header h1">Sistema de Inventario</h1>
+      </header>
+
+      <div class="card mb-4">
+        <h2 class="card-title">Bienvenido</h2>
+        <p>
+          Gestiona tu inventario de manera eficiente. Controla repuestos,
+          clientes, vehículos y más desde un solo lugar.
+        </p>
+      </div>
+    </div>
+  </div>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

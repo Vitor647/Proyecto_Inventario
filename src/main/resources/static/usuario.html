@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-6">
+        <h1 class="text-2xl font-bold mb-4">Gestión de Usuarios</h1>
+
+        <div style="margin-bottom: 20px;">
+            <a href="/index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Menú Principal
+            </a>
+        </div>
+
+
+        <!-- Formulario para agregar/editar usuario -->
+        <div class="mb-4">
+            <input type="hidden" id="usuario-id">
+            <input type="text" id="usuario-nombre" placeholder="Nombre del Usuario"
+                class="border border-gray-300 rounded-lg px-4 py-2 w-full mb-2" required>
+            <input type="email" id="usuario-email" placeholder="email del Usuario"
+                class="border border-gray-300 rounded-lg px-4 py-2 w-full mb-2" required>
+            <input type="password" id="usuario-password" placeholder="Contraseña"
+                class="border border-gray-300 rounded-lg px-4 py-2 w-full mb-2" required>
+            <label for="usuario-rol" class="sr-only">Rol del Usuario</label>
+            <select id="usuario-rol" class="border border-gray-300 rounded-lg px-4 py-2 w-full mb-2" required>
+                <option value="">Seleccione un rol</option>
+                <option value="ADMIN">Admin</option>
+                <option value="MECANICO">Mecánico</option>
+                <option value="ALMACEN">Almacén</option>
+            </select>
+            <button id="btn-agregar" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Agregar Usuario</button>
+        </div>
+
+        <!-- Tabla de Usuarios -->
+        <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="px-6 py-4 border-b">ID</th>
+                    <th class="px-6 py-4 border-b">Nombre</th>
+                    <th class="px-6 py-4 border-b">email</th>
+                    <th class="px-6 py-4 border-b">Rol</th>
+                    <th class="px-6 py-4 border-b">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-usuarios">
+                <!-- Las filas de usuarios se llenarán dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/js/usuario.js"></script>
+</body>
+
+</html>

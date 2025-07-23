@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Movimientos de Inventario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="/css/movimiento.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-6">
+        <h1 class="text-2xl font-bold mb-4">Gestión de Movimientos de Inventario</h1>
+
+        <div style="margin-bottom: 20px;">
+            <a href="/index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Menú Principal
+            </a>
+        </div>
+
+        <div class="mb-4 flex space-x-4">
+            <select id="filtro-tipo" class="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                title="Filtrar por tipo de movimiento" aria-label="Filtrar por tipo de movimiento">
+                <option value="">Todos los tipos</option>
+                <option value="ENTRADA">Entrada</option>
+                <option value="SALIDA">Salida</option>
+                <option value="AJUSTE">Ajuste</option>
+            </select>
+            <select id="filtro-repuestos" class="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                title="Filtrar por repuestos" aria-label="Filtrar por repuestos">
+                <option value="">Todos los repuestos</option>
+            </select>
+            <input type="date" id="filtro-fecha" class="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                title="Filtrar por fecha" placeholder="Seleccione una fecha">
+            <button id="btn-aplicar-filtros" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Aplicar
+                Filtros</button>
+            <button id="btn-limpiar-filtros" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg">Limpiar
+                Filtros</button>
+        </div>
+
+        <!-- Contadores -->
+        <div class="mb-4 flex space-x-4">
+            <div class="bg-green-100 p-4 rounded-lg">
+                <h2 class="font-bold">Entradas</h2>
+                <p id="contador-entradas" class="text-2xl">0</p>
+            </div>
+            <div class="bg-red-100 p-4 rounded-lg">
+                <h2 class="font-bold">Salidas</h2>
+                <p id="contador-salidas" class="text-2xl">0</p>
+            </div>
+            <div class="bg-blue-100 p-4 rounded-lg">
+                <h2 class="font-bold">Ajustes</h2>
+                <p id="contador-ajustes" class="text-2xl">0</p>
+            </div>
+        </div>
+
+        <!-- Tabla de Movimientos -->
+        <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="px-6 py-4 border-b">ID</th>
+                    <th class="px-6 py-4 border-b">Repuestos</th>
+                    <th class="px-6 py-4 border-b">Tipo</th>
+                    <th class="px-6 py-4 border-b">Cantidad</th>
+                    <th class="px-6 py-4 border-b">Cliente/Proveedor</th>
+                    <th class="px-6 py-4 border-b">Fecha</th>
+                    <th class="px-6 py-4 border-b">Referencia</th>
+                    <th class="px-6 py-4 border-b">Usuario</th>
+                    <th class="px-6 py-4 border-b">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-movimientos">
+                <!-- Las filas de movimientos se llenarán dinámicamente -->
+            </tbody>
+        </table>
+
+        <!-- Paginación -->
+        <div class="mt-4 flex justify-center">
+            <div class="paginacion"></div>
+        </div>
+
+        <!-- Botón para nuevo movimiento -->
+        <div class="mt-4">
+            <button id="btn-nuevo-movimiento" class="bg-green-600 text-white px-4 py-2 rounded-lg">Nuevo
+                Movimiento</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal-movimiento" class="fixed inset-0 bg-gray-800 bg-opacity-50 hidden justify-center items-center">
+        <div class="bg-white rounded-lg p-6 w-11/12 md:w-1/2">
+            <h2 id="modal-titulo" class="text-xl font-bold mb-4">Título del Modal</h2>
+            <form id="form-movimiento" title="Formulario de movimiento">
+                <!-- Contenido del formulario se llenará dinámicamente -->
+            </form>
+            <div class="flex justify-end">
+                <button id="btn-cancelar"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-4 rounded-lg">Cancelar</button>
+                <button id="btn-guardar"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg">Guardar</button>
+            </div>
+            <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700" data-modal-cerrar
+                title="Cerrar modal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="/js/movimiento_inventario.js"></script>
+</body>
+
+</html>

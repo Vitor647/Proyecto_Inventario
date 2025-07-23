@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto p-6">
+        <header>
+            <h1><i class="fas fa-users"></i> Gestión de Clientes</h1>
+        </header>
+
+        <div style="margin-bottom: 20px;">
+            <a href="/index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Menú Principal
+            </a>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">Añadir Nuevo Cliente</h2>
+            <form id="clienteForm">
+                <input type="hidden" id="clienteId">
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" class="form-control" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div class="form-col">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" class="form-control" placeholder="Ej: 600111222" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Ej: juan.perez@email.com"
+                            required>
+                    </div>
+                    <div class="form-col">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" class="form-control"
+                            placeholder="Ej: Calle Falsa 123, Madrid">
+                    </div>
+                </div>
+
+                <div class="actions" style="margin-top: 20px;">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar Cliente</button>
+                    <button type="button" id="btnLimpiar" class="btn btn-secondary"><i class="fas fa-eraser"></i>
+                        Limpiar Formulario</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">Lista de Clientes Registrados</h2>
+            <div class="table-responsive">
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th style="width: 20%;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaClientes">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/clientes.js"></script>
+</body>
+
+</html>

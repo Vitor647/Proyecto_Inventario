@@ -1,0 +1,20 @@
+/* Estilos para el detalle de la orden de trabajo */
+.detalle-card {
+    display: none;
+}
+
+/* Estilos para el título de repuestos */
+.card-title-repuestos {
+    margin-top: 20px;
+}
+
+/* Estilos para las celdas de la tabla */
+.total-repuestos {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Estilos para el botón de cerrar detalle */
+.btn-cerrar-detalle {
+    margin-top: 20px;
+}
